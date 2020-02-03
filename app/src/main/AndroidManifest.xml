@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RoundEndActivity"></activity>
+        <activity android:name=".scanActivity"></activity>
+        <activity android:name=".RoundEndActivity" />
         <activity android:name=".RoundProgressActivity" />
         <activity android:name=".LoginActivity" />
     </application>
