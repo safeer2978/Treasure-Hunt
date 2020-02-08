@@ -4,14 +4,19 @@ import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.format.DateUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 public class RoundProgressActivity extends AppCompatActivity {
 
@@ -50,7 +55,17 @@ public class RoundProgressActivity extends AppCompatActivity {
             }
         }.start();
     }
+    boolean mCurrentTime = DateUtils.isToday();
 
+    public static final String DATE_FORMAT_1 = "hh:mm a";
+
+    public static String getcurrenttime()
+    {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT_1);
+        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+        Date today = Calendar.getInstance().getTime();
+        return dateFormat.format(today);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

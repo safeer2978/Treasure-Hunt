@@ -1,6 +1,7 @@
 package com.treasurehunt;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,7 +37,11 @@ public class RoundEndActivity extends AppCompatActivity {
 //        requestQueue.add(resultRequest);
     }
 
-    public void onClickFeedBack(View v) {
+    public void onClickFeedBack(View view)
+    {
+        Intent browserIntent=new Intent(Intent.ACTION_VIEW, Uri.parse("https://forms.gle/QJYMNYCvhJVNwcg28"));
+        startActivity(browserIntent);
+    }
 
         StringRequest resultRequest = new StringRequest(Request.Method.POST, login_url, new Response.Listener<String>() {
             @Override
