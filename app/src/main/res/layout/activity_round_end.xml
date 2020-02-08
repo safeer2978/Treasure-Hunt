@@ -1,9 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".RoundEndActivity">
 
+<FrameLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".RoundEndActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/loading"
+    >
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:id="@+id/round_end_layout"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:visibility="visible"
+    >
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/background_button"
+        android:orientation="horizontal"
+        android:padding="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You Came:"
+            android:textColor="#000000"
+            android:textSize="45sp"
+            tools:layout_editor_absoluteX="24dp"
+            tools:layout_editor_absoluteY="109dp" />
+
+        <TextView
+            android:id="@+id/position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1st"
+            android:textColor="#000000"
+            android:textSize="45sp"
+            tools:layout_editor_absoluteX="24dp"
+            tools:layout_editor_absoluteY="109dp" />
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <EditText
+        android:id="@+id/feedback"
+        android:layout_width="259dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:hint="Feedback"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_button"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feedback" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="157dp"
+        android:layout_height="134dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        tools:srcCompat="@drawable/dsc_logo" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        tools:text="@string/dsc_credit" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="175dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/credits_nachi_team"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/credits_safeer_team"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:text="Your Feedback is very Important to us. it helps us fix issues in our system and imporves experiance for future teams"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/linearLayoutCompat"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
 </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>

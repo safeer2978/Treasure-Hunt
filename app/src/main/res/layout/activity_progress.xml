@@ -1,23 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_orange_dark"
-    tools:context=".RoundProgressActivity">
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="64dp"
-        android:layout_height="42dp"
-        android:background="#B2D9DF"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="START" />
+    android:background="@color/questions_background"
+    android:orientation="vertical"
+    tools:context=".questions">
 
 
-    <android.support.v7.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+
+        <Button
+            android:id="@+id/count_down_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/round_button"
+            android:elevation="13dp"
+            android:padding="2dp"
+            android:text="00:00"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="@+id/cardView2"
+            app:layout_constraintTop_toBottomOf="@+id/questions" />
+
+        <TextView
+            android:id="@+id/questions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:text="@string/questions"
+            android:textSize="36sp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageButton
+                android:id="@+id/hint_btn"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:background="@color/questions_background"
+                android:onClick="onClickHint"
+                app:srcCompat="@drawable/red_bubble" />
+
+            <ImageButton
+                android:id="@+id/scan_btn"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:background="@color/questions_background"
+                android:onClick="onScanClick"
+                app:srcCompat="@drawable/barcode" />
+        </LinearLayout>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+
+            android:padding="20dp"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/count_down_btn">
+
+
+            <TextView
+                android:id="@+id/question_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="1dp"
+                android:padding="20dp"
+                android:text="TextView"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
+
+        </android.support.v7.widget.CardView>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/hint_layout"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:onClick="backImage"
+            android:background="@color/white"
+            app:srcCompat="@drawable/back_button" />
+
+        <TextView
+            android:id="@+id/hint"
+            android:layout_width="match_parent"
+            android:layout_height="385dp"
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="30sp"
+            android:layout_marginRight="20sp"
+            android:text="@string/hints"
+            android:textSize="30sp" />
+
+
+    </LinearLayout>
+
+
+
+</FrameLayout>

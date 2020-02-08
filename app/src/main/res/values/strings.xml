@@ -3,4 +3,18 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="team">Enter your team ID: </string>
+    <string name="name">Enter your name: </string>
+    <string name="button_submit">Submit</string>
+    <string name="hints">HINTS:</string>
+    <string name="questions">Questions: </string>
+    <string name="barcode">BARCODE</string>
+
+
+    <string name="dsc_credit">This Application was built be members of Developer Students Club Under Project Groups Program</string>
+    <string name="credits_nachi_team">Idea and Game Design by Nachiket</string>
+    <string name="credits_safeer_team">Team Lead by Safeer\n members: Shubangi\nPrakhar\nSwanand\nRatnesh\n Bhist</string>
+    <string name="feedback">Your Feedback is very Important to us. It helps us fix issues in our system and improves UI for future teams</string>
 </resources>
